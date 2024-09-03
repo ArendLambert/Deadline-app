@@ -1,0 +1,31 @@
+﻿<Window x:Class="DeadLineApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeadLineApp"
+        mc:Ignorable="d"
+        Title="Список задач" Height="482" Width="797">
+    <Grid RenderTransformOrigin="0.5,0.5" Background="#FFFFE6E6">
+        <ListBox x:Name="ListDeals" Margin="0,0,346,0" Background="#FFE3C5C5"/>
+        <Button x:Name="AddDealButton" Content="Добавить" HorizontalAlignment="Left" Margin="474,379,0,0" VerticalAlignment="Top" Height="45" Width="110" Click="AddDealButton_Click" Background="#FFE8D7D7" FontFamily="Comic Sans MS"/>
+        <Button x:Name="DeleteDealButton" Content="Удалить" HorizontalAlignment="Left" Margin="650,379,0,0" VerticalAlignment="Top" Height="45" Width="110" Click="DeleteDealButton_Click" Background="#FFE8D7D7" FontFamily="Comic Sans MS"/>
+        <Label Content="Сортировка по приоритету" HorizontalAlignment="Left" Margin="456,10,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS"/>
+        <Button x:Name="MinSortButton" Content="▲" HorizontalAlignment="Left" Margin="465,41,0,0" VerticalAlignment="Top" Height="25" Width="25" Click="MinSortButton_Click" Background="#FFE8D7D7"/>
+        <Button x:Name="MaxSortButton" Content="▼" HorizontalAlignment="Left" Margin="495,41,0,0" VerticalAlignment="Top" Height="25" Width="25" Click="MaxSortButton_Click" Background="#FFE8D7D7"/>
+        <Button x:Name="ClearSOrtButton" Content="Очистить" HorizontalAlignment="Left" Margin="550,41,0,0" VerticalAlignment="Top" Height="25" Click="ClearSortButton_Click" Background="#FFE8D7D7" FontFamily="Comic Sans MS"/>
+        <Calendar x:Name="MainCalendar" HorizontalAlignment="Left" Margin="465,98,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" SelectedDatesChanged="MainCalendar_SelectedDatesChanged">
+            <Calendar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4EAF0"/>
+                    <GradientStop Color="#FFECF0F4" Offset="0.16"/>
+                    <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
+                    <GradientStop Color="#FFFFF4F4" Offset="1"/>
+                </LinearGradientBrush>
+            </Calendar.Background>
+        </Calendar>
+        <TextBox x:Name="SearchTextBox" HorizontalAlignment="Left" Margin="650,41,0,0" TextWrapping="Wrap" Text="введите что-нибудь" VerticalAlignment="Top" Width="120" Height="25" FontFamily="Comic Sans MS" Background="#FFFFF4F4" DataContextChanged="SearchTextBox_DataContextChanged" TextChanged="SearchTextBox_TextChanged" GotFocus="SearchTextBox_GotFocus"/>
+        <Label Content="Поиск" HorizontalAlignment="Left" Margin="650,12,0,0" VerticalAlignment="Top" Height="25" FontFamily="Comic Sans MS"/>
+
+    </Grid>
+</Window>
